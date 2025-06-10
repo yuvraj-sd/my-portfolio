@@ -32,7 +32,7 @@ const App = () => {
         <section
           id='home'
           ref={homeRef}
-          className='relative transition-all duration-500 bg-[#161f353f]'
+          className='relative transition-all duration-500 bg-[var(--section-bg)]'
         >
           <motion.div
             initial={{ x: -100, opacity: 0 }}
@@ -54,7 +54,7 @@ const App = () => {
         <section
           id='about'
           ref={aboutRef}
-          className='relative transition-all duration-500 rounded-4xl bg-[#161f353f] mt-20 mx-15'
+          className='relative transition-all duration-500 rounded-4xl bg-[var(--section-bg)] mt-20 mx-15'
         >
           <motion.div
             initial={{ x: -100, opacity: 0 }}

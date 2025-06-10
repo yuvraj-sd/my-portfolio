@@ -1,7 +1,7 @@
 import React from 'react'
 import Logo from '../assets/logo.png'
 import { ReactTyped } from 'react-typed'
-import { MailIcon, Linkedin, Target, Instagram } from 'lucide-react'
+import { MailIcon, Linkedin, Target, Instagram, Github } from 'lucide-react'
 
 const Home = () => {
   return (
@@ -33,7 +33,8 @@ const Home = () => {
             {[
               { href: 'https://mail.google.com/mail/?view=cm&fs=1&to=imyuvi77@gmail.com&su=Hello&body=Let%20me%20connect%20with%20you!', target: '_blank', Icon: MailIcon },
               { href: 'https://www.linkedin.com/in/yuvraj-singh-178a35313', target: '_blank', Icon: Linkedin },
-              { href: 'https://www.instagram.com/yuvrxj_sd/', target: '_blank', Icon: Instagram}
+              { href: 'https://www.instagram.com/yuvrxj_sd/', target: '_blank', Icon: Instagram},
+              { href: 'https://github.com/yuvraj-sd/', target: '_blank', Icon: Github}
             ].map(({ href, target, Icon }) => (
               <li key={href}>
                 <a

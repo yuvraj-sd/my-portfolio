@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Logo from '../assets/logo_small.png'
 import {
     Home,
@@ -8,13 +8,32 @@ import {
     Folder,
     MessageCircle,
     Menu,
-    X
+    X,
+    Sun,
+    Moon
 } from 'lucide-react'
 
 const Navbar = () => {
 
 
     const [isOpen, setIsOpen] = useState(false);
+
+    const [theme, setTheme] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const stored = localStorage.getItem('theme')
+            if (stored) return stored
+            return 'dark'
+        }
+    })
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            document.documentElement.setAttribute('data-theme', theme)
+            localStorage.setItem('theme', theme)
+        }
+    }, [theme])
+
+    const toggleTheme = () => setTheme(theme === 'light' ? 'dark' : 'light')
 
     const navItems = [
         { href: '#home', Icon: Home, title: 'Home' },
@@ -29,9 +48,10 @@ const Navbar = () => {
     return (
         <>
 
-            <div className="fixed shadow hidden justify-between m-0 top-0 z-50 md:flex w-full bg-[rgba(18,24,38,0.8)] backdrop-blur-md p-3">
+            <div className="fixed shadow hidden justify-between m-0 top-0 z-50 md:flex w-full transition-colors duration-200 bg-[var(--navbar-bg)] backdrop-blur-md p-3"
+            style={{ background: 'var(--navbar-bg)' }}>
 
-                <img src={Logo} alt="Logo"  width={45} height={45}/>
+                <img src={Logo} alt="Logo" width={45} height={45} />
                 <main className='flex justify-center items-center gap-10'>
 
                     {navItems.map(({ href, Icon, title }) => {
@@ -46,6 +66,17 @@ const Navbar = () => {
                         )
                     })}
                 </main>
+
+                <button
+                    aria-label='Toggle theme'
+                    onClick={toggleTheme}
+                    className='cursor-pointer'>
+                    {theme === 'light'
+                        ? <Moon className='w-6 h-6 text-[var(--text)] hover:text-[var(--primary)]' />
+                        : <Sun className='w-6 h-6 text-[var(--text)] hover:text-[var(--primary)] transition-colors duration-300' />}
+
+                </button>
+
             </div>
 
 
@@ -77,27 +108,43 @@ const Navbar = () => {
                         />
                     </div>
 
-                    {/* Logo */}
-                    <div className='mt-12 flex justify-center'>
-                        <img src={Logo} alt="Logo" width={100} />
-                    </div>
+                    {/* Flex container for sidebar content */}
+                    <div className="flex flex-col h-full justify-between">
+                        <div>
+                            {/* Logo */}
+                            <div className='mt-12 flex justify-center'>
+                                <img src={Logo} alt="Logo" width={100} />
+                            </div>
+                            {/* Navigation Items */}
+                            <main className='flex flex-col gap-6 mt-8'>
+                                {navItems.map(({ href, Icon }) => (
+                                    <a
+                                        key={href}
+                                        href={href}
+                                        className='flex items-center gap-3 text-[var(--text)] active:text-[var(--primary)] active:scale-90 transition-all duration-200 hover:text-[var(--primary)]'
+                                        onClick={() => setIsOpen(false)}
+                                    >
+                                        <Icon className='w-5 h-5' />
+                                        <span className='text-sm '>
+                                            {href.replace('#', '').toUpperCase()}
+                                        </span>
+                                    </a>
+                                ))}
+                            </main>
+                        </div>
 
-                    {/* Navigation Items */}
-                    <main className='flex flex-col gap-6 mt-8'>
-                        {navItems.map(({ href, Icon }) => (
-                            <a
-                                key={href}
-                                href={href}
-                                className='flex items-center gap-3 text-[var(--text)] active:text-[var(--primary)] active:scale-90 transition-all duration-200 hover:text-[var(--primary)]'
-                                onClick={() => setIsOpen(false)}
-                            >
-                                <Icon className='w-5 h-5' />
-                                <span className='text-sm '>
-                                    {href.replace('#', '').toUpperCase()}
-                                </span>
-                            </a>
-                        ))}
-                    </main>
+
+                        <button
+                            aria-label='Toggle theme'
+                            onClick={toggleTheme}
+                            className=' flex items-center gap-3 text-[var(--text)] active:text-[var(--primary)] active:scale-90 transition-all duration-50 hover:text-[var(--primary)]'
+                        >
+                            {theme === 'light'
+                                ? <Moon className='w-5 h-5 text-[var(--text)] hover:text-[var(--primary)] transition-colors duration-300' />
+                                : <Sun className='w-5 h-5  text-[var(--text)] hover:text-[var(--primary)] transition-colors duration-300' />}
+                            <span className="text-sm ">{theme === 'light' ? 'DARK MODE' : 'LIGHT MODE'}</span>
+                        </button>
+                    </div>
                 </div>
             </>
         </>
