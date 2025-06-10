@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+* {
+  font-family: "Rubik", sans-serif;
+
+}
+
+::selection {
+  background-color: var(--light-blue);
+  color: #000000;
+}
+
+.light {
+  --primary: #735DA5;      /* Deep indigo as primary (same as dark accent) */
+  --accent: #D3C5E5;       /* Softer lavender as light accent */
+  --light-blue: #00bfa6;   /* Muted teal instead of neon */
+  --bg: #f8fafc;           /* Light background (tailwind slate-50) */
+  --text: #1e293b;         /* Darker text (tailwind slate-800) */
+  --muted: #94a3b8;        /* Lighter muted (tailwind slate-400) */
+  --section-bg: #e2e8f080; /* Soft semi-transparent light background */
+}
+
+:root {
+  --primary: #D3C5E5;   /* Softer indigo-lavender as primary */
+  --accent: #735DA5;    /* Stronger accent in dark mode */
+  --light-blue: #00ffd5; 
+  --bg: #121826;        /* Deep navy blue background */
+  --text: #f1f5f9;      /* Light gray/white text */
+  --muted: #6c7280;     /* Muted slate gray */
+  --section-bg: #161f353f;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+}
+
+
+
+.just-test {
+  --bg: rgb(24, 35, 58);  
+}
