@@ -4,8 +4,8 @@ import { SquareTerminalIcon, BugOffIcon, CodeXmlIcon } from 'lucide-react'
 
 const About = () => {
   return (
-    <div className="flex flex-col items-center px-4 py-12">
-      <h1 className="text-3xl md:text-4xl text-[var(--text)] font-extrabold mb-20 mt-2 text-center">
+    <div className="flex flex-col items-center p-4">
+      <h1 className="text-3xl md:text-4xl mb-20 mt-2 text-[var(--text)] font-extrabold text-center">
         About Me
       </h1>
 
