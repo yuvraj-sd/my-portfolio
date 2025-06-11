@@ -19,6 +19,8 @@ const App = () => {
   const homeInView = useInView(homeRef, { amount: 0.4, once: false })
   const aboutRef = useRef(null)
   const aboutInView = useInView(aboutRef, { amount: 0.4, once: false })
+  const educationRef = useRef(null)
+  const educationInView = useInView(educationRef, { amount: 0.4, once: false })
 
 
 
@@ -64,13 +66,32 @@ const App = () => {
             <About />
           </motion.div>
 
-          {/* Glow Spots - Responsive */}
-          <div className="absolute w-40 h-40 sm:w-52 sm:h-52 md:w-72 md:h-72 bg-indigo-500 opacity-30 blur-3xl rounded-full top-10 sm:top-16 md:top-20 left-5 sm:left-12 md:left-20 pointer-events-none"></div>
+          <div className="absolute w-40 h-40 sm:w-52 sm:h-52 md:w-72 md:h-72 bg-indigo-500 opacity-30 blur-3xl rounded-full top-10 sm:top-16 md:top-20 left-5 sm:left-12 md:left-60 pointer-events-none"></div>
           <div className="absolute w-36 h-36 sm:w-48 sm:h-48 md:w-60 md:h-60 bg-yellow-500 opacity-25 blur-2xl rounded-full bottom-5 sm:bottom-10 right-10 sm:right-24 md:right-32 pointer-events-none"></div>
-          <div className="absolute w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 bg-red-400 opacity-20 blur-3xl rounded-full top-5 sm:top-8 md:top-10 right-5 sm:right-10 md:right-10 pointer-events-none"></div>
+          <div className="absolute w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 bg-red-400 opacity-20 blur-3xl rounded-full top-5 sm:top-8 md:top-10 right-5 sm:right-10 md:right-54 pointer-events-none"></div>
           <div className="absolute w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 bg-zinc-100 opacity-20 blur-2xl rounded-full bottom-5 sm:bottom-8 md:bottom-10 left-10 sm:left-20 md:left-[120px] pointer-events-none"></div>
         </section>
 
+
+
+        <section
+          id='education'
+          ref={educationRef}
+          className='relative transition-all duration-500 rounded-4xl bg-[var(--section-bg)] mt-20 mx-15'
+        >
+          <motion.div
+            initial={{ x: -100, opacity: 0 }}
+            animate={educationInView ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
+            transition={{ duration: 0.6, ease: 'easeOut' }}
+          >
+            <Education />
+          </motion.div>
+
+          <div className="absolute w-40 h-40 sm:w-52 sm:h-52 md:w-72 md:h-72 bg-[#2f0051] opacity-30 blur-3xl rounded-full top-10 sm:top-16 md:top-20 left-5 sm:left-12 md:left-70 pointer-events-none"></div>
+          <div className="absolute w-36 h-36 sm:w-48 sm:h-48 md:w-60 md:h-60 bg-[#ff6200] opacity-25 blur-2xl rounded-full bottom-5 sm:bottom-10 right-10 sm:right-24 md:right-32 pointer-events-none"></div>
+          <div className="absolute w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 bg-[#0077ff] opacity-20 blur-3xl rounded-full top-5 sm:top-8 md:top-10 right-5 sm:right-10 md:right-10 pointer-events-none"></div>
+          <div className="absolute w-32 h-32 sm:w-44 sm:h-44 md:w-56 md:h-56 bg-[#a7cc1e] opacity-20 blur-2xl rounded-full bottom-5 sm:bottom-8 md:bottom-10 left-10 sm:left-20 md:left-[180px] pointer-events-none"></div>
+        </section>
 
       </div>
     </div>

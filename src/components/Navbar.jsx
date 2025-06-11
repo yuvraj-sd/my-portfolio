@@ -72,8 +72,8 @@ const Navbar = () => {
                     onClick={toggleTheme}
                     className='cursor-pointer'>
                     {theme === 'light'
-                        ? <Moon className='w-6 h-6 text-[var(--text)] hover:text-[var(--primary)]' />
-                        : <Sun className='w-6 h-6 text-[var(--text)] hover:text-[var(--primary)] transition-colors duration-300' />}
+                        ? <Moon className='w-6 h-6 text-white hover:text-[var(--accent)]' />
+                        : <Sun className='w-6 h-6 text-white hover:text-[var(--primary)] transition-colors duration-300' />}
 
                 </button>
 
@@ -90,14 +90,14 @@ const Navbar = () => {
 
             <>
                 <div
-                    className={`fixed inset-0 bg-white/30 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    className={`fixed inset-0 bg-black/20 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
                         }`}
                     onClick={() => setIsOpen(false)}
                 />
 
                 {/* Sidebar Drawer */}
                 <div
-                    className={`fixed top-0 left-0 h-full w-64 bg-[rgba(18,24,38,0.8)] backdrop-blur-md p-4 z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+                    className={`fixed top-0 left-0 h-full w-64 bg-[--navbar-bg-mobile] backdrop-blur-md p-4 z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* Close Button */}

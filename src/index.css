@@ -14,11 +14,12 @@
   --primary: #735DA5;      /* Deep indigo as primary (same as dark accent) */
   --accent: #D3C5E5;       /* Softer lavender as light accent */
   --light-blue: #00bfa6;   /* Muted teal instead of neon */
-  --navbar-bg: linear-gradient(90deg, rgba(18, 24, 38, 0.503), rgba(204, 192, 243, 0.8), rgba(204, 192, 243, 0.8), rgba(204, 192, 243, 0.8));
-  --bg: #ced1d3;           /* Light background (tailwind slate-50) */
+  --navbar-bg: linear-gradient(90deg, rgba(18, 24, 38, 0.503), rgba(204, 192, 243, 0.8), rgba(204, 192, 243, 0.8), rgba(204, 192, 243, 0.8), rgba(204, 192, 243, 0.8), rgba(18, 24, 38, 0.503));
+  --bg: #ced1d3;           /* Light background (tailwind slate-50) */ 
   --text: #1e293b;         /* Darker text (tailwind slate-800) */
   --muted: #94a3b8;        /* Lighter muted (tailwind slate-400) */
   --section-bg: #e2e8f08c; /* Soft semi-transparent light background */
+  --navbar-bg-mobile: rgba(125, 127, 131, 0.8);
 }
 
 :root[data-theme='dark'] {
@@ -30,6 +31,7 @@
   --text: #f1f5f9;      /* Light gray/white text */
   --muted: #6c7280;     /* Muted slate gray */
   --section-bg: #161f353f;
+  --navbar-bg-mobile: rgba(18,24,38,0.8);
 }
 
 html {
