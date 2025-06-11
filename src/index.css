@@ -20,6 +20,8 @@
   --muted: #94a3b8;        /* Lighter muted (tailwind slate-400) */
   --section-bg: #e2e8f08c; /* Soft semi-transparent light background */
   --navbar-bg-mobile: rgba(125, 127, 131, 0.8);
+  --non-text: white;
+
 }
 
 :root[data-theme='dark'] {
@@ -32,6 +34,7 @@
   --muted: #6c7280;     /* Muted slate gray */
   --section-bg: #161f353f;
   --navbar-bg-mobile: rgba(18,24,38,0.8);
+  --non-text: rgb(80, 80, 80);
 }
 
 html {
