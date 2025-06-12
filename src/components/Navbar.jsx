@@ -15,7 +15,6 @@ import {
 
 const Navbar = () => {
 
-
     const [isOpen, setIsOpen] = useState(false);
 
     const [theme, setTheme] = useState(() => {
@@ -44,16 +43,16 @@ const Navbar = () => {
         { href: '#contact', Icon: MessageCircle, title: 'Contact' },
     ];
 
-
     return (
         <>
 
-            <div className="fixed shadow hidden justify-between m-0 top-0 z-50 md:flex w-full transition-colors duration-200 bg-[var(--navbar-bg)] backdrop-blur-md p-3"
-            style={{ background: 'var(--navbar-bg)' }}>
-
+            {/* Desktop Navbar */}
+            <div
+                className="fixed shadow hidden justify-between top-2 left-4 right-4 z-50 md:flex transition-colors duration-200 bg-[var(--navbar-bg)] backdrop-blur-md p-3 rounded-4xl"
+                style={{ background: 'var(--navbar-bg)' }}
+            >
                 <img src={Logo} alt="Logo" width={45} height={45} />
                 <main className='flex justify-center items-center gap-10'>
-
                     {navItems.map(({ href, Icon, title }) => {
                         return (
                             <div key={href}>
@@ -66,7 +65,6 @@ const Navbar = () => {
                         )
                     })}
                 </main>
-
                 <button
                     aria-label='Toggle theme'
                     onClick={toggleTheme}
@@ -74,19 +72,16 @@ const Navbar = () => {
                     {theme === 'light'
                         ? <Moon className='w-6 h-6 text-white hover:text-[var(--accent)]' />
                         : <Sun className='w-6 h-6 text-white hover:text-[var(--primary)] transition-colors duration-300' />}
-
                 </button>
-
             </div>
 
-
+            {/* Mobile Hamburger */}
             <div className='md:hidden fixed top-4 left-4 z-50'>
                 <Menu
                     className={`w-8 h-8 cursor-pointer transition-all duration-300 ease-in-out text-[var(--text)] ${isOpen ? 'opacity-0 scale-70 pointer-events-none' : 'opacity-100 scale-100 pointer-events-auto'} `}
                     onClick={() => setIsOpen(true)}
                 />
             </div>
-
 
             <>
                 <div
@@ -132,7 +127,6 @@ const Navbar = () => {
                                 ))}
                             </main>
                         </div>
-
 
                         <button
                             aria-label='Toggle theme'

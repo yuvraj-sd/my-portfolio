@@ -1,62 +1,34 @@
 import React from 'react'
-import PythonLogo from '../assets/python-svg.svg'
+import Logo from '../assets/logo.png'
+import { SquareTerminalIcon, BugOffIcon, CodeXmlIcon } from 'lucide-react'
 
-const Skills = () => {
-  const pythonSkill = 80; // percentage
-
+const About = () => {
   return (
-    <div className='p-4 text-[var(--text)] justify-center'>
-      <h1 className="text-3xl md:text-4xl font-extrabold mb-4 md:mb-7 mt-2 text-center">
-        Skills
+    <div className="flex flex-col items-center px-4 py-12">
+      <h1 className="text-3xl md:text-4xl text-[var(--text)] font-extrabold mb-20 mt-2 text-center">
+        About Me
       </h1>
 
-      {/* skills div */}
-      <div className="flex w-full flex-col justify-center items-center">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-10 w-full max-w-5xl">
+        {/* Logo */}
+        <img
+          src={Logo}
+          width={192}
+          alt="Logo"
+          className="border-2 border-b-gray-700 rounded-full"
+        />
 
-        {/* python */}
-        <div className="flex flex-col items-center gap-4 w-full p-2 border-1">
-          <div className="flex flex-row items-center gap-2 mt-3 mb-2">
-            <h2 className="text-lg font-semibold">Python</h2>
-            <span>
-              <img src={PythonLogo} alt="Python logo" width={36} />
-            </span>
-          </div>
-          <div className="w-full max-w-md bg-gray-200 rounded-full h-6 dark:bg-gray-700 relative"
-            role="progressbar"
-            aria-valuenow={pythonSkill}
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-label="Python skill proficiency"
-          >
-            <div
-              className="bg-gradient-to-r from-[#00ffe1] to-[#f6ff00] h-6 rounded-full transition-colors duration-300"
-              style={{ width: `${pythonSkill}%` }}
-            />
-            <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-black">
-              {pythonSkill}%
-            </span>
-          </div>
-        </div>
+        {/* Info Card */}
+        <div className="p-6 bg-[var(--accent)] rounded-3xl w-full md:w-[60%] shadow-xl border-2 border-white/20 transition-all">
+          <p className="font-medium text-[var(--text)] text-sm md:text-base leading-relaxed">
+            I am Yuvraj Singh Dhanjal from Punjab, India. I'm a passionate Frontend React Developer skilled in building dynamic and responsive web interfaces. For backend, I use Django because of my strong foundation in Python.
+          </p>
 
-        {/* Centered second skill */}
-        <div className="flex items-center gap-4 w-full justify-center">
-          <span>
-            <img src={PythonLogo} alt="Python logo" width={36} />
-          </span>
-          <div className="w-full max-w-md bg-gray-200 rounded-full h-6 dark:bg-gray-700 relative"
-            role="progressbar"
-            aria-valuenow={pythonSkill}
-            aria-valuemin={0}
-            aria-valuemax={100}
-            aria-label="Python skill proficiency"
-          >
-            <div
-              className="bg-gradient-to-r from-[#00ffe1] to-[#f6ff00] h-6 rounded-full transition-colors duration-300"
-              style={{ width: `${pythonSkill}%` }}
-            />
-            <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-black">
-              {pythonSkill}%
-            </span>
+          {/* Icons */}
+          <div className="flex justify-center mt-4 gap-6">
+            <SquareTerminalIcon className="text-[var(--primary)] hover:text-black transition-all duration-200 w-6 h-6 md:w-8 md:h-8" />
+            <BugOffIcon className="text-[var(--primary)] hover:text-black transition-all duration-200 w-6 h-6 md:w-8 md:h-8" />
+            <CodeXmlIcon className="text-[var(--primary)] hover:text-black transition-all duration-200 w-6 h-6 md:w-8 md:h-8" />
           </div>
         </div>
       </div>
@@ -64,4 +36,4 @@ const Skills = () => {
   )
 }
 
-export default Skills
+export default About

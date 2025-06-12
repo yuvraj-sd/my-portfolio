@@ -1,9 +1,13 @@
 import React from 'react'
 import PythonLogo from '../assets/python-svg.svg'
+import ReactLogo from '../assets/react_logo.svg'
+import UnityLogo from '../assets/unity_logo.svg'
 
 const Skills = () => {
-  const pythonSkill = 76; 
-  const androidSkill = 68; 
+  const pythonSkill = 83
+  const androidSkill = 68
+  const reactSkill = 75
+  const unitySkill = 56
 
   return (
     <div className='p-4 text-[var(--text)] justify-center'>
@@ -56,17 +60,74 @@ const Skills = () => {
           </div>
           <div className="w-full bg-[var(--non-text)] rounded-full h-6 relative"
             role="progressbar"
-            aria-valuenow={pythonSkill}
+            aria-valuenow={androidSkill}
             aria-valuemin={0}
             aria-valuemax={100}
             aria-label="Python skill proficiency"
           >
             <div
-              className="bg-gradient-to-r from-[#4fff4c] to-[#00ffaa] h-6 rounded-full transition-colors duration-300"
+              className="bg-gradient-to-r from-[#4fff4c] to-[#40ff00] h-6 rounded-full transition-colors duration-300"
               style={{ width: `${androidSkill}%` }}
             />
             <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-black">
               {androidSkill}%
+            </span>
+          </div>
+        </div>
+
+
+        {/* react js div */}
+        <div className="flex flex-col bg-[#8080801c] rounded-4xl items-center gap-4 p-4 w-full">
+
+          <div className='flex flex-row mb-2 '>
+            <h2 className="text-lg"><pre>React JS  </pre></h2>
+            <span>
+              <img src={ReactLogo} alt="Python logo" width={24} className='' />
+            </span>
+          </div>
+          <div className="w-full bg-[var(--non-text)] rounded-full h-6 relative"
+            role="progressbar"
+            aria-valuenow={reactSkill}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label="Python skill proficiency"
+          >
+            <div
+              className="bg-gradient-to-r from-[#4c8eff] to-[#00ffaa] h-6 rounded-full transition-colors duration-300"
+              style={{ width: `${reactSkill}%` }}
+            />
+            <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-black">
+              {reactSkill}%
+            </span>
+          </div>
+        </div>
+
+
+
+
+
+        {/* unity game dev div */}
+        <div className="flex flex-col bg-[#8080801c] rounded-4xl items-center gap-4 p-4 w-full">
+
+          <div className='flex flex-row mb-2 '>
+            <h2 className="text-lg"><pre>Game Development with  </pre></h2>
+            <span>
+<img src={UnityLogo} alt="Python logo" width={48} className='rounded-xl' />
+            </span>
+          </div>
+          <div className="w-full bg-[var(--non-text)] rounded-full h-6 relative"
+            role="progressbar"
+            aria-valuenow={unitySkill}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            aria-label="Python skill proficiency"
+          >
+            <div
+              className="bg-gradient-to-r from-[#f34cff] to-[#ff009d] h-6 rounded-full transition-colors duration-300"
+              style={{ width: `${unitySkill}%` }}
+            />
+            <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-black">
+              {unitySkill}%
             </span>
           </div>
         </div>
