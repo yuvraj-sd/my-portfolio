@@ -15,7 +15,6 @@ import {
 
 const Navbar = () => {
 
-
     const [isOpen, setIsOpen] = useState(false);
 
     const [theme, setTheme] = useState(() => {
@@ -44,16 +43,16 @@ const Navbar = () => {
         { href: '#contact', Icon: MessageCircle, title: 'Contact' },
     ];
 
-
     return (
         <>
 
-            <div className="fixed shadow hidden justify-between m-0 top-0 z-50 md:flex w-full transition-colors duration-200 bg-[var(--navbar-bg)] backdrop-blur-md p-3"
-            style={{ background: 'var(--navbar-bg)' }}>
-
+            {/* Desktop Navbar */}
+            <div
+                className="fixed shadow hidden justify-between top-2 left-4 right-4 z-50 md:flex transition-colors duration-200 bg-[var(--navbar-bg)] backdrop-blur-md p-3 rounded-4xl"
+                style={{ background: 'var(--navbar-bg)' }}
+            >
                 <img src={Logo} alt="Logo" width={45} height={45} />
                 <main className='flex justify-center items-center gap-10'>
-
                     {navItems.map(({ href, Icon, title }) => {
                         return (
                             <div key={href}>
@@ -66,20 +65,17 @@ const Navbar = () => {
                         )
                     })}
                 </main>
-
                 <button
                     aria-label='Toggle theme'
                     onClick={toggleTheme}
                     className='cursor-pointer'>
                     {theme === 'light'
-                        ? <Moon className='w-6 h-6 text-[var(--text)] hover:text-[var(--primary)]' />
-                        : <Sun className='w-6 h-6 text-[var(--text)] hover:text-[var(--primary)] transition-colors duration-300' />}
-
+                        ? <Moon className='w-6 h-6 text-white hover:text-[var(--accent)]' />
+                        : <Sun className='w-6 h-6 text-white hover:text-[var(--primary)] transition-colors duration-300' />}
                 </button>
-
             </div>
 
-
+            {/* Mobile Hamburger */}
             <div className='md:hidden fixed top-4 left-4 z-50'>
                 <Menu
                     className={`w-8 h-8 cursor-pointer transition-all duration-300 ease-in-out text-[var(--text)] ${isOpen ? 'opacity-0 scale-70 pointer-events-none' : 'opacity-100 scale-100 pointer-events-auto'} `}
@@ -87,17 +83,16 @@ const Navbar = () => {
                 />
             </div>
 
-
             <>
                 <div
-                    className={`fixed inset-0 bg-white/30 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    className={`fixed inset-0 bg-black/20 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
                         }`}
                     onClick={() => setIsOpen(false)}
                 />
 
                 {/* Sidebar Drawer */}
                 <div
-                    className={`fixed top-0 left-0 h-full w-64 bg-[rgba(18,24,38,0.8)] backdrop-blur-md p-4 z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+                    className={`fixed top-0 left-0 h-full w-64 bg-[--navbar-bg-mobile] backdrop-blur-md p-4 z-50 transform transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* Close Button */}
@@ -132,7 +127,6 @@ const Navbar = () => {
                                 ))}
                             </main>
                         </div>
-
 
                         <button
                             aria-label='Toggle theme'
