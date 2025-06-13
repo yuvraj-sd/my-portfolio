@@ -39,7 +39,7 @@ const Navbar = () => {
         { href: '#about', Icon: User, title: 'About' },
         { href: '#education', Icon: GraduationCap, title: 'Education' },
         { href: '#skills', Icon: Database, title: 'Skills' },
-        { href: '#projects', Icon: Folder, title: 'Projects' },
+        // { href: '#projects', Icon: Folder, title: 'Projects' },
         { href: '#contact', Icon: MessageCircle, title: 'Contact' },
     ];
 
