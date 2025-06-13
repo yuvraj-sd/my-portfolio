@@ -1,13 +1,13 @@
 import React from 'react'
 import PythonLogo from '../assets/python-svg.svg'
 import ReactLogo from '../assets/react_logo.svg'
-import UnityLogo from '../assets/unity_logo.svg'
+import ReactNativeLogo from '../assets/react_native_logo.svg'
 
 const Skills = () => {
   const pythonSkill = 83
   const androidSkill = 68
   const reactSkill = 75
-  const unitySkill = 56
+  const reactNativeSkill = 56
 
   return (
     <div className='p-4 text-[var(--text)] justify-center'>
@@ -106,28 +106,28 @@ const Skills = () => {
 
 
 
-        {/* unity game dev div */}
+        {/* react native div */}
         <div className="flex flex-col bg-[#8080801c] rounded-4xl items-center gap-4 p-4 w-full">
 
           <div className='flex flex-row mb-2 '>
-            <h2 className="text-lg"><pre>Game Development with  </pre></h2>
+            <h2 className="text-lg"><pre>React Native  </pre></h2>
             <span>
-<img src={UnityLogo} alt="Python logo" width={48} className='rounded-xl' />
+              <img src={ReactNativeLogo} alt="Python logo" width={36} className='rounded-xl' />
             </span>
           </div>
           <div className="w-full bg-[var(--non-text)] rounded-full h-6 relative"
             role="progressbar"
-            aria-valuenow={unitySkill}
+            aria-valuenow={reactNativeSkill}
             aria-valuemin={0}
             aria-valuemax={100}
             aria-label="Python skill proficiency"
           >
             <div
               className="bg-gradient-to-r from-[#f34cff] to-[#ff009d] h-6 rounded-full transition-colors duration-300"
-              style={{ width: `${unitySkill}%` }}
+              style={{ width: `${reactNativeSkill}%` }}
             />
             <span className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-bold text-black">
-              {unitySkill}%
+              {reactNativeSkill}%
             </span>
           </div>
         </div>
